@@ -22,13 +22,23 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Button fab = (Button) findViewById(R.id.fab);
-        assert fab != null;
-        fab.setOnClickListener(new View.OnClickListener() {
+        Button btAndroidJoke = (Button) findViewById(R.id.bt_android_joke);
+        assert btAndroidJoke != null;
+        btAndroidJoke.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, JokeDisplayActivity.class);
                 intent.putExtra("joke", new Joker().getAndroidJoke());
+                startActivity(intent);
+            }
+        });
+
+        Button btGceJoke = (Button) findViewById(R.id.bt_gce_joke);
+        assert btGceJoke != null;
+        btGceJoke.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, GceActivity.class);
                 startActivity(intent);
             }
         });

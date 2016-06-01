@@ -24,11 +24,18 @@
     <include layout="@layout/content_main" />
 
     <Button
-        android:id="@+id/fab"
+        android:id="@+id/bt_android_joke"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
         android:text="@string/joke_android_description" />
+
+    <Button
+        android:id="@+id/bt_gce_joke"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:text="@string/joke_gce_description"/>
 
 </android.support.design.widget.CoordinatorLayout>
