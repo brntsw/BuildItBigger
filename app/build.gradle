@@ -11,12 +11,24 @@ android {
         versionCode 1
         versionName "1.0"
     }
+
+    productFlavors {
+        free {
+            applicationId "br.com.bruno.udacity.builditbigger.free"
+        }
+        paid {
+            applicationId "br.com.bruno.udacity.builditbigger.paid"
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+
 }
 
 dependencies {
