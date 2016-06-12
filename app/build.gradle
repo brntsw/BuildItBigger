@@ -1,9 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        configFree {
+            keyAlias 'builditbiggerfree'
+            keyPassword 'zephx28k#22'
+            storeFile file('C:/Users/Bruno/AndroidStudioProjects/BuildItBigger/BuildItBigger/keystoreFree.jks')
+            storePassword 'zephx28k#22'
+        }
+    }
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
-
     defaultConfig {
         applicationId "br.com.bruno.udacity.builditbigger"
         minSdkVersion 16
@@ -11,7 +18,6 @@ android {
         versionCode 1
         versionName "1.0"
     }
-
     productFlavors {
         free {
             applicationId "br.com.bruno.udacity.builditbigger.free"
@@ -20,23 +26,22 @@ android {
             applicationId "br.com.bruno.udacity.builditbigger.paid"
         }
     }
-
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
-
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile project(':joketeller')
     compile project(':jokeandroidlib')
-    compile 'com.android.support:appcompat-v7:23.4.0'
-    compile 'com.android.support:design:23.4.0'
     compile project(path: ':backend', configuration: 'android-endpoints')
+    freeCompile 'com.google.android.gms:play-services-ads:9.0.2'
+    compile 'com.android.support:appcompat-v7:24.0.0-beta1'
+    compile 'com.android.support:design:24.0.0-beta1'
+    compile 'com.google.android.gms:play-services-ads:9.0.2'
 }
