@@ -9,9 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.Joker;
-
-import br.com.bruno.udacity.jokeandroidlib.JokeDisplayActivity;
+import br.com.bruno.udacity.builditbigger.tasks.JokeTask;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,9 +25,7 @@ public class MainActivity extends AppCompatActivity {
         btAndroidJoke.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, JokeDisplayActivity.class);
-                intent.putExtra("joke", new Joker().getAndroidJoke());
-                startActivity(intent);
+                new JokeTask().execute(MainActivity.this);
             }
         });
 
